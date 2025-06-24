@@ -1,11 +1,23 @@
-
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const ContactUs: React.FC = () => {
+    // Refs for each side
+    const leftRef = useRef(null);
+    const rightRef = useRef(null);
+
+    const leftInView = useInView(leftRef, { amount: 0.3, once: false });
+    const rightInView = useInView(rightRef, { amount: 0.3, once: false });
+
     return (
         <section className="py-20 bg-gray-50" id="contact">
             <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12">
-                {/* Left Side - Info */}
-                <div>
+                {/* LEFT - Fade up */}
+                <motion.div
+                    ref={leftRef}
+                    animate={{ opacity: leftInView ? 1 : 0, y: leftInView ? 0 : 50 }}
+                    transition={{ duration: 0.6 }}
+                >
                     <h2 className="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
                     <p className="text-gray-600 mb-8">
                         We're here to help with all your translation needs. Reach out to us for a consultation or a quote.
@@ -28,13 +40,18 @@ const ContactUs: React.FC = () => {
 
                         <div className="flex items-center gap-3">
                             <span className="text-blue-600 text-lg">📍</span>
-                            <p> Awash-7  City, afar, Ethiopia</p>
+                            <p>Awash-7 City, Afar, Ethiopia</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
-                {/* Right Side - Form */}
-                <div className="bg-gray-50 p-6 rounded-xl shadow-md">
+                {/* RIGHT - Fade down */}
+                <motion.div
+                    ref={rightRef}
+                    className="bg-gray-50 p-6 rounded-xl shadow-md"
+                    animate={{ opacity: rightInView ? 1 : 0, y: rightInView ? 0 : -50 }}
+                    transition={{ duration: 0.6 }}
+                >
                     <form className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -79,7 +96,7 @@ const ContactUs: React.FC = () => {
                             Send Message
                         </button>
                     </form>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

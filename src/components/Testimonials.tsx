@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const testimonials = [
     {
@@ -21,30 +22,55 @@ const testimonials = [
     },
 ];
 
+interface TestimonialCardProps {
+    quote: string;
+    name: string;
+    role: string;
+    avatar: string;
+}
+
+const TestimonialCard = ({ quote, name, role, avatar }: TestimonialCardProps) => {
+    const ref = useRef(null);
+    const isInView = useInView(ref, { amount: 0.3, once: false });
+
+    return (
+        <motion.div
+            ref={ref}
+            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.03 }}
+            className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+        >
+            <p className="text-gray-700 text-sm italic mb-6">“{quote}”</p>
+            <div className="flex items-center justify-center gap-4">
+                <img
+                    src={avatar}
+                    alt={name}
+                    className="w-12 h-12 rounded-full object-cover"
+                />
+                <div className="text-left">
+                    <p className="font-semibold text-gray-900">{name}</p>
+                    <p className="text-xs text-gray-500">{role}</p>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+
 const Testimonials: React.FC = () => {
     return (
-        <section className="bg-white py-10">
+        <section className="bg-white py-16">
             <div className="max-w-6xl mx-auto px-4 text-center">
                 <h2 className="text-3xl font-bold text-gray-900 mb-12">What Our Clients Say</h2>
                 <div className="grid gap-10 md:grid-cols-3">
                     {testimonials.map((testimonial, idx) => (
-                        <div
+                        <TestimonialCard
                             key={idx}
-                            className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-lg transition"
-                        >
-                            <p className="text-gray-700 text-sm italic mb-6">“{testimonial.quote}”</p>
-                            <div className="flex items-center justify-center gap-4">
-                                <img
-                                    src={testimonial.avatar}
-                                    alt={testimonial.name}
-                                    className="w-12 h-12 rounded-full object-cover"
-                                />
-                                <div className="text-left">
-                                    <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                                    <p className="text-xs text-gray-500">{testimonial.role}</p>
-                                </div>
-                            </div>
-                        </div>
+                            quote={testimonial.quote}
+                            name={testimonial.name}
+                            role={testimonial.role}
+                            avatar={testimonial.avatar}
+                        />
                     ))}
                 </div>
             </div>
