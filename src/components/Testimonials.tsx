@@ -4,21 +4,21 @@ import { motion, useInView } from "framer-motion";
 const testimonials = [
     {
         quote: "This service transformed the way we communicate globally. Absolute game-changer!",
-        name: "Emily Tran",
-        role: "Global Marketing Lead, MedixHealth",
-        avatar: "/images/Other.png",
+        name: "Lidiya Tesfaye",
+        role: " Marketing Lead, MIT",
+        avatar: "/images/lidu.jpg",
     },
     {
         quote: "Their localization support was spot on. We scaled into new markets effortlessly.",
-        name: "Carlos Rivera",
-        role: "CTO, FutureWare",
-        avatar: "/images/Other.png",
+        name: "Mohammed Hussen",
+        role: "CEO, AwashStore",
+        avatar: "/images/mame.jpg",
     },
     {
         quote: "Legal translations were fast, accurate, and 100% compliant. Highly recommend!",
-        name: "Sofia Bennett",
-        role: "Head of Legal, NexaCorp",
-        avatar: "/images/Other.png",
+        name: "Mussa Abdo",
+        role: "Head of Legal, Afar",
+        avatar: "/images/mussa.jpg",
     },
 ];
 

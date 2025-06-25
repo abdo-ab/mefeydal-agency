@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
 
             {/* Bottom */}
             <div className="text-center text-sm text-gray-500 mt-8">
-                © {new Date().getFullYear()} Mefeydal. All rights reserved.
+                Developed by <a href="https://t.me/Qabuna_matata" className="text-gray-400 hover:underline">DEV AB</a> © {new Date().getFullYear()} Mefeydal. All rights reserved.
             </div>
         </footer>
     );
