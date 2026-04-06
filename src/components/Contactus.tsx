@@ -35,7 +35,7 @@ const ContactUs: React.FC = () => {
           form.current?.reset();
           setTimeout(() => setSuccess(false), 4000);
         },
-        (error) => {
+        () => {
           setLoading(false);
           setError("Failed to send message. Please try again.");
         },
