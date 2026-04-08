@@ -16,7 +16,7 @@ function App() {
     name: "Mefeydal Translation Agency",
     alternateName: "Mefeydal Agency",
     url: "https://mefeydal-agency.abdoab.dev",
-    image: "https://mefeydal-agency.abdoab.dev/mefeydal-logo.webp",
+    image: "https://mefeydal-agency.abdoab.dev/logo.png", // Replace with your actual logo path
     description:
       "Expert Afar-Af language translation, interpretation, and localization services.",
     founder: {
