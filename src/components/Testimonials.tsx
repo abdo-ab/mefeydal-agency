@@ -39,7 +39,7 @@ const TestimonialCard = ({ quote, name, role, avatar }: TestimonialCardProps) =>
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
             transition={{ duration: 0.5 }}
             whileHover={{ scale: 1.03 }}
-            className="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+            className="bg-brand-cream/20 border border-brand-secondary/30 p-6 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
         >
             <p className="text-gray-700 text-sm italic mb-6">“{quote}”</p>
             <div className="flex items-center justify-center gap-4">
@@ -49,7 +49,7 @@ const TestimonialCard = ({ quote, name, role, avatar }: TestimonialCardProps) =>
                     className="w-12 h-12 rounded-full object-cover"
                 />
                 <div className="text-left">
-                    <p className="font-semibold text-gray-900">{name}</p>
+                    <p className="font-semibold text-brand-primary">{name}</p>
                     <p className="text-xs text-gray-500">{role}</p>
                 </div>
             </div>
@@ -61,7 +61,7 @@ const Testimonials: React.FC = () => {
     return (
         <section className="bg-white py-16">
             <div className="max-w-6xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold text-gray-900 mb-12">What Our Clients Say</h2>
+                <h2 className="text-3xl font-bold text-brand-primary mb-12">What Our Clients Say</h2>
                 <div className="grid gap-10 md:grid-cols-3">
                     {testimonials.map((testimonial, idx) => (
                         <TestimonialCard

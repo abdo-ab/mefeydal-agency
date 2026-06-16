@@ -15,7 +15,7 @@ export default function Hero() {
                 >
                     <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl dark:text-white">
                         Global communication
-                        <strong className="text-indigo-600"> seamlessly </strong>
+                        <strong className="text-brand-secondary"> seamlessly </strong>
                         delivered
                     </h1>
 
@@ -25,14 +25,14 @@ export default function Hero() {
 
                     <div className="mt-4 flex gap-4 sm:mt-6">
                         <a
-                            className="inline-block rounded border border-indigo-600 bg-indigo-600 px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-indigo-700"
+                            className="inline-block rounded border border-brand-primary bg-brand-primary px-5 py-3 font-medium text-white shadow-sm transition-colors hover:bg-brand-olive"
                             href="#services"
                         >
                             explore services
                         </a>
 
                         <a
-                            className="inline-block rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900 dark:border-gray-700 dark:text-gray-200 dark:hover:bg-gray-800 dark:hover:text-white"
+                            className="inline-block rounded border border-brand-primary px-5 py-3 font-medium text-brand-primary shadow-sm transition-colors hover:bg-brand-cream hover:text-brand-primary dark:border-brand-secondary dark:text-brand-secondary dark:hover:bg-brand-primary/20 dark:hover:text-white"
                             href="#contact"
                         >
                             contact us

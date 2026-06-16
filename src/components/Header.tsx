@@ -18,13 +18,13 @@ const Header = () => {
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center gap-10">
                     <ul className="flex gap-8 text-sm text-gray-800 font-medium">
-                        <li><a href="#services" className="hover:text-blue-600 transition">Services</a></li>
-                        <li><a href="#industries" className="hover:text-blue-600 transition">Industries</a></li>
-                        <li><a href="#experiences" className="hover:text-blue-600 transition">Experience</a></li>
+                        <li><a href="#services" className="hover:text-brand-secondary transition">Services</a></li>
+                        <li><a href="#industries" className="hover:text-brand-secondary transition">Industries</a></li>
+                        <li><a href="#experiences" className="hover:text-brand-secondary transition">Experience</a></li>
 
                     </ul>
 
-                    <button className="bg-blue-600 text-white text-sm font-semibold px-6 py-2 rounded-md shadow-md hover:bg-blue-700 transition">
+                    <button className="bg-brand-primary text-white text-sm font-semibold px-6 py-2 rounded-md shadow-md hover:bg-brand-olive transition">
                         <a href="#contact">Contact us</a>
                     </button>
                 </div>
@@ -46,13 +46,13 @@ const Header = () => {
                 <div className="absolute top-full left-0 w-full bg-white shadow-md md:hidden">
                     <div className="flex flex-col items-center justify-center gap-6 py-6 text-lg text-gray-800 font-medium">
                         <ul className="flex flex-col items-center gap-6">
-                            <li><a href="#services" onClick={closeMenu} className="hover:text-blue-600 transition">Services</a></li>
-                            <li><a href="#industries" onClick={closeMenu} className="hover:text-blue-600 transition">Industries</a></li>
-                            <li><a href="#experiences" onClick={closeMenu} className="hover:text-blue-600 transition">Experience</a></li>
+                            <li><a href="#services" onClick={closeMenu} className="hover:text-brand-secondary transition">Services</a></li>
+                            <li><a href="#industries" onClick={closeMenu} className="hover:text-brand-secondary transition">Industries</a></li>
+                            <li><a href="#experiences" onClick={closeMenu} className="hover:text-brand-secondary transition">Experience</a></li>
                         </ul>
                         <button
                             onClick={closeMenu}
-                            className="bg-blue-600 text-white text-sm font-semibold px-6 py-2 rounded-md shadow-md hover:bg-blue-700 transition"
+                            className="bg-brand-primary text-white text-sm font-semibold px-6 py-2 rounded-md shadow-md hover:bg-brand-olive transition"
                         >
                             <a href="#contact">Contact us</a>
                         </button>

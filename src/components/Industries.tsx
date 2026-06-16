@@ -37,9 +37,9 @@ const industries = [
 
 const Industries: React.FC = () => {
     return (
-        <section className="py-16 bg-gray-50 text-center" id="industries">
+        <section className="py-16 bg-brand-cream/50 text-center" id="industries">
             <motion.h2
-                className="text-3xl font-bold text-gray-900 mb-10"
+                className="text-3xl font-bold text-brand-primary mb-10"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
@@ -52,7 +52,7 @@ const Industries: React.FC = () => {
                 {industries.map((industry, idx) => (
                     <motion.div
                         key={idx}
-                        className="bg-white rounded-lg shadow-md hover:shadow-xl transition duration-300 hover:scale-[1.02] cursor-pointer"
+                        className="bg-white border border-brand-secondary/20 rounded-lg shadow-md hover:shadow-xl transition duration-300 hover:scale-[1.02] cursor-pointer"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: idx * 0.1 }}
@@ -64,7 +64,7 @@ const Industries: React.FC = () => {
                             className="w-full h-40 object-cover rounded-t-lg"
                         />
                         <div className="p-4">
-                            <h3 className="text-lg font-semibold text-gray-800">{industry.title}</h3>
+                            <h3 className="text-lg font-semibold text-brand-primary">{industry.title}</h3>
                             <p className="text-sm text-gray-600 mt-1">{industry.description}</p>
                         </div>
                     </motion.div>

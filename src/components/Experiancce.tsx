@@ -53,17 +53,17 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => {
             ref={ref}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
             transition={{ duration: 0.5 }}
-            className="bg-gray-50 border border-gray-200 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
+            className="bg-white border border-brand-secondary/30 p-6 rounded-xl shadow-sm hover:shadow-md transition duration-300"
         >
             <div className="flex items-center gap-4 mb-4">
                 <img
                     src={exp.logo}
                     alt={`${exp.org} logo`}
-                    className="w-14 h-14 rounded-md object-contain bg-white p-1 border"
+                    className="w-14 h-14 rounded-md object-contain bg-white p-1 border border-brand-secondary/20"
                 />
                 <div>
-                    <h3 className="text-xl font-semibold text-gray-800">{exp.org}</h3>
-                    <p className="text-sm text-gray-500">{exp.duration}</p>
+                    <h3 className="text-xl font-semibold text-brand-primary">{exp.org}</h3>
+                    <p className="text-sm text-brand-olive font-medium">{exp.duration}</p>
                 </div>
             </div>
             <p className="text-gray-700 font-medium">{exp.role}</p>
@@ -74,16 +74,16 @@ const ExperienceCard = ({ exp }: { exp: Experience }) => {
 
 const Experience: React.FC = () => {
     return (
-        <section className="py-20 bg-gray-50" id="experiences">
+        <section className="py-20 bg-brand-cream/50" id="experiences">
             <div className="max-w-6xl mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
+                <h2 className="text-3xl font-bold text-center text-brand-primary mb-12">
                     Our Experience
                 </h2>
                 <p className="text-center text-lg text-gray-600 mb-10">
                     We have{" "}
-                    <span className="font-semibold text-gray-900">5+ years</span> of
+                    <span className="font-semibold text-brand-primary">5+ years</span> of
                     experience with{" "}
-                    <span className="font-semibold text-gray-900">60+ clients</span> and
+                    <span className="font-semibold text-brand-primary">60+ clients</span> and
                     have worked with great companies.
                 </p>
 
