@@ -2,80 +2,80 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const testimonials = [
-    {
-        quote: "This service transformed the way we communicate globally. Absolute game-changer!",
-        name: "Lidiya Tesfaye",
-        role: " Marketing Lead, MIT",
-        avatar: "/images/lidu.jpg",
-    },
-    {
-        quote: "Their localization support was spot on. We scaled into new markets effortlessly.",
-        name: "Mohammed Hussen",
-        role: "CEO, AwashStore",
-        avatar: "/images/mame.jpg",
-    },
-    {
-        quote: "Legal translations were fast, accurate, and 100% compliant. Highly recommend!",
-        name: "Mussa Abdo",
-        role: "Head of Legal, Afar",
-        avatar: "/images/mussa.jpg",
-    },
+  {
+    quote: "This service transformed the way we communicate globally. Absolute game-changer!",
+    name: "Lidiya Tesfaye",
+    role: " Marketing Lead, MIT",
+    avatar: "/images/lidu.jpg",
+  },
+  {
+    quote: "Their localization support was spot on. We scaled into new markets effortlessly.",
+    name: "Mohammed Hussen",
+    role: "CEO, AwashStore",
+    avatar: "/images/mame.jpg",
+  },
+  {
+    quote: "Legal translations were fast, accurate, and 100% compliant. Highly recommend!",
+    name: "Mussa Abdo",
+    role: "Head of Legal, Afar",
+    avatar: "/images/mussa.jpg",
+  },
 ];
 
 interface TestimonialCardProps {
-    quote: string;
-    name: string;
-    role: string;
-    avatar: string;
+  quote: string;
+  name: string;
+  role: string;
+  avatar: string;
 }
 
 const TestimonialCard = ({ quote, name, role, avatar }: TestimonialCardProps) => {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { amount: 0.3, once: false });
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3, once: false });
 
-    return (
-        <motion.div
-            ref={ref}
-            animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
-            transition={{ duration: 0.5 }}
-            whileHover={{ scale: 1.03 }}
-            className="bg-brand-cream/20 border border-brand-secondary/30 p-6 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
-        >
-            <p className="text-gray-700 text-sm italic mb-6">“{quote}”</p>
-            <div className="flex items-center justify-center gap-4">
-                <img
-                    src={avatar}
-                    alt={name}
-                    className="w-12 h-12 rounded-full object-cover"
-                />
-                <div className="text-left">
-                    <p className="font-semibold text-brand-primary">{name}</p>
-                    <p className="text-xs text-gray-500">{role}</p>
-                </div>
-            </div>
-        </motion.div>
-    );
+  return (
+    <motion.div
+      ref={ref}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 40 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.03 }}
+      className="bg-brand-cream/20 border border-brand-secondary/30 p-6 rounded-lg shadow-sm hover:shadow-lg transition cursor-pointer"
+    >
+      <p className="text-gray-700 text-sm italic mb-6">“{quote}”</p>
+      <div className="flex items-center justify-center gap-4">
+        <img
+          src={avatar}
+          alt={name}
+          className="w-12 h-12 rounded-full object-cover"
+        />
+        <div className="text-left">
+          <p className="font-semibold text-brand-primary">{name}</p>
+          <p className="text-xs text-gray-500">{role}</p>
+        </div>
+      </div>
+    </motion.div>
+  );
 };
 
 const Testimonials: React.FC = () => {
-    return (
-        <section className="bg-white py-16">
-            <div className="max-w-6xl mx-auto px-4 text-center">
-                <h2 className="text-3xl font-bold text-brand-primary mb-12">What Our Clients Say</h2>
-                <div className="grid gap-10 md:grid-cols-3">
-                    {testimonials.map((testimonial, idx) => (
-                        <TestimonialCard
-                            key={idx}
-                            quote={testimonial.quote}
-                            name={testimonial.name}
-                            role={testimonial.role}
-                            avatar={testimonial.avatar}
-                        />
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+  return (
+    <section className="bg-white py-16">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold text-brand-primary mb-12">What Our Clients Say</h2>
+        <div className="grid gap-10 md:grid-cols-3">
+          {testimonials.map((testimonial, idx) => (
+            <TestimonialCard
+              key={idx}
+              quote={testimonial.quote}
+              name={testimonial.name}
+              role={testimonial.role}
+              avatar={testimonial.avatar}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Testimonials;
